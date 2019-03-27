@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <title>CLIENTS REGISTARTION</title>
+</head>
+<body>
+<h3> Register a new Client: </h3>
+
+<form th:action="@{/saveClient}" method="post">
+    <div><label> Login : <input type="text" name="username" placeholder="login"/> </label></div>
+    <div><label> Password: <input type="password" name="password" placeholder="password"/> </label></div>
+    <div><label> Email: <input type="text" name="name" placeholder="clientName"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+
+<h4>Or, in case you already have an accout, log in: </h4>
+
+<form action="/login" method="get">
+
+    <input type="submit" name="" placeholder="" value="Go To Logination Page"/>
+
+</form>
+
+<h4>Or, in case you are already logged in, go to a page : </h4>
+<form action="/goToSecuredPage" method="get">
+
+    <input type="submit" name="" placeholder="" value="Go To Secured Page"/>
+
+</form>
+
+</body>
+</html>

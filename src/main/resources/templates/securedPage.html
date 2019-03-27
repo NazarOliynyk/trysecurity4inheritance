@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <title>Secured Page</title>
+</head>
+<body>
+<h1> Page just to try security access </h1>
+<h3>You got in as <p th:text="${className}"></p>
+    <!--<p th:text="${username}"></p>-->
+    <p th:text="${name}"></p>
+</h3>
+
+
+<h2>Add a new contact to your contact list and take a look into the database: </h2>
+<form action="/saveContact" method="get">
+
+    <input type="hidden" name="username" th:value="${username}"/>
+    <input type="text" name="contactName" placeholder="Contact name"/>
+    <input type="email" name="email" placeholder="Contact email"/>
+
+    <input type="submit" name="" placeholder="" value="Save Contact"/>
+
+</form>
+<h2> To logout : </h2>
+<form th:action="@{/logout}" method="POST">
+    <input type="submit" value="Log out"/>
+
+</form>
+
+<form action="/goToIndexPage" method="get">
+
+    <input type="submit" name="" placeholder="" value="Go To Index Page"/>
+
+</form>
+
+<h4>Or, in case you are already logged in as ADMIN, go to a page : </h4>
+
+<form action="/admin/goToSecuredPage2" method="post">
+
+    <input type="submit" name="" placeholder="" value="Go To Secured Page 2"/>
+
+</form>
+
+</body>
+</html>
