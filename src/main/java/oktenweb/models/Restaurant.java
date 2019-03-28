@@ -18,11 +18,6 @@ import java.util.List;
 @DiscriminatorValue("RESTAURANT")
 public class Restaurant extends User{
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private int id;
-//    String username;
-//    String password;
     String restaurantName;
 
 

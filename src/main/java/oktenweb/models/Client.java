@@ -18,11 +18,6 @@ import java.util.List;
 @DiscriminatorValue("CLIENT")
 public class Client extends User{
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private int id;
-//    String username;
-//    String password;
     String clientName;
 
 
@@ -30,7 +25,7 @@ public class Client extends User{
     @OneToMany(
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY,
-            mappedBy = "restaurant"
+            mappedBy = "client"
     )
     List<Contact> clientContacts = new ArrayList<>();
 
