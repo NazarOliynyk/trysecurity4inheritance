@@ -49,8 +49,11 @@ public class Security extends WebSecurityConfigurerAdapter{
                 .authorizeRequests()
                 .antMatchers("/", "/saveClient", "/saveRestaurant",  "/clients" ,"/restaurants").permitAll() // everyone can access on url: "/", "/home"
                 .anyRequest().authenticated() // other url need auth
+                .antMatchers("/admin/goToSecuredPage2").authenticated()
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.POST, "/admin/goToSecuredPage2").hasRole("ADMIN")
+
+                //.antMatchers(HttpMethod.POST, "/admin/goToSecuredPage2").hasRole("ADMIN")
+
                 .and()
                 .formLogin()
                 .loginPage("/login")
